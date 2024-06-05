@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Consumo</title>
+        <script>
+            let certo
+            do{
+            let kmInicial = window.prompt("Digite os Km iniciais: ", 0)
+            if(Number(kmInicial!=NaN)){
+                let kmFinal = window.prompt("Digite os Km finais rodados: ", 0)
+                }else{
+                    alert("ERRO: numero não digitado com sucesso!")
+                    certo = false
+                    }
+            if(Number(kmFinal!=NaN)){
+                if(Number(kmInicial < kmFinal)){
+                    let kmDiferencial = kmFinal - kmInicial
+                    let autonomia = window.prompt("Digite a autonomia do seu carro: (Km/L) ", 0)
+                    if(Number(autonomia!=NaN)){
+                        let preco = window.prompt("Digite o preço da gasolina: ", 0)
+                        if(preco!=NaN){
+                            let cal = kmDiferencial*preco/autonomia
+                            alert("Seu custo foi de: "+cal+" R$")
+                            certo = true
+                            }else{
+                                alert("ERRO: numero não digitado com sucesso!")
+                                certo = false   
+                                }
+                    }else{
+                        alert("ERRO: numero não digitado com sucesso!")
+                        certo = false  
+                        }
+                }else{
+                    alert("ERRO: o Km inicial não pode ser maior que o Km final!")
+                    certo = false
+                    }
+            }else{
+                alert("ERRO: numero não digitado com sucesso!")
+                certo = false
+                }
+            }while(certo!=true)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
